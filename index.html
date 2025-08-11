@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Ro-Ro Dispatcher (Mobile) — Seaspan Fleet</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>Ro-Ro Dispatcher</h1>
+      <div class="tag">Seaspan Fleet</div>
+    </header>
+    <main id="layout">
+      <canvas id="game" width="1100" height="720" aria-label="Game canvas"></canvas>
+      <section id="controls">
+        <p class="sub">Keep freight flowing. Drag vessels between terminals. Tap terminals to buy upgrades.</p>
+        <div id="levelPanel">
+          <label for="levelSelect">Level</label>
+          <select id="levelSelect"></select>
+          <button id="startBtn">Start</button>
+          <button id="pauseBtn">Pause</button>
+          <button id="resetBtn">Reset</button>
+        </div>
+        <div id="stats">
+          <div><strong>Time</strong><br><span id="clock">00:00</span></div>
+          <div><strong>Cash</strong><br>$<span id="cash">0</span></div>
+          <div><strong>Avg Wait</strong><br><span id="avgWait">0.0</span> min</div>
+          <div><strong>Delivered</strong><br><span id="delivered">0</span></div>
+          <div class="goal"><strong>Goal</strong><br><span id="goalText"></span></div>
+        </div>
+        <div id="fleet"></div>
+        <details id="help">
+          <summary>How to play</summary>
+          <ul>
+            <li><b>Drag</b> boats between terminals to change routes.</li>
+            <li><b>Tap</b> a terminal to buy upgrades (Berth, Yard, Shunt, Crew).</li>
+            <li>Hitting yard limits costs money (lost loads).</li>
+            <li>Win by meeting delivered + avg wait target before time runs out.</li>
+          </ul>
+        </details>
+      </section>
+    </main>
+  </div>
+  <script src="levels.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
